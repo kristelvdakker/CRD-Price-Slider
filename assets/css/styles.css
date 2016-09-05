@@ -1,0 +1,50 @@
+html,body {
+	font-family: 'Oswald', sans-serif;
+	color:white;
+	background-color:rgb(51, 52, 66);
+}
+h1,h2,h3,h4,b {
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.option * {
+	display:inline-block;
+}
+.flat-slider {
+	-webkit-appearance:none;
+	position:relative;
+	top:5px;
+	width:360px;
+	height:20px;
+	background:linear-gradient(to right, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.25) 100%);
+	background-size:350px 10px;
+	background-position:center;
+	background-repeat:no-repeat;
+	overflow:hidden;
+	outline:none;
+}
+.flat-slider::-webkit-slider-thumb {
+	-webkit-appearance:none;
+	width:20px;
+	height:20px;
+	background:#5ec1f2;
+	position:relative;
+	z-index:3;
+	box-shadow:0 0 5px 0 rgba(0,0,0,0.3);
+}
+.flat-slider::-webkit-slider-thumb:after {
+	content:" ";
+	width:360px;
+	height:10px;
+	position:absolute;
+	z-index:1;
+	right:20px;
+	top:5px;
+	background: #ff5b32;
+	background: linear-gradient(to right, #5249ff 1%, #5249ff 70%);
+}
+.content {
+	position:relative;
+	width:50%;
+	left:25%;
+	right:25%;
+}
