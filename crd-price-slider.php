@@ -36,15 +36,18 @@ if( ! defined( 'CRD_PS_BASE_INC' ))
 function crd_slider_scripts() {
 	// Deregister the included library
 	wp_deregister_script('jquery');
+	wp_deregister_script('jquery-ui-core');
 
 	// Register the library again from Google's CDN
 	wp_register_script('jquery','http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js',array(),null,false);
+	wp_register_script('jquery','https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js',array(),null,false);
 
 	// Register the script like this for a plugin:
 	wp_register_script('slider-script',plugins_url('/assets/js/scripts.js',__FILE__),array('jquery'),false,false);
 
 	// For either a plugin or a theme, you can then enqueue the script:
 	wp_enqueue_script('jquery');
+	wp_enqueue_script('jquery-ui-core');
 	wp_enqueue_script('slider-script');
 }
 add_action('wp_enqueue_scripts','crd_slider_scripts');
@@ -66,17 +69,23 @@ add_action('wp_enqueue_scripts','crd_slider_styles');
 function crd_price_slider_page() {
 ?>
 	<div class="option">
-		<p>CPU Cores:</p>
-		<input type="range" class="flat-slider" id="cpu-slider" min="1" max="8" value="4"/>
-		<p id="cpu-cores">4</p>
-		<p id="cpu-price">Cost: $60</p>
+		<a class="NLbtn pricingbtn active">Nederland</a>
+		<a class="DEbtn pricingbtn">Duitsland</a>
 	</div>
 	<div class="option">
-	<p>RAM:</p>
+		<p>CPU Cores:</p>
+		<input type="range" class="flat-slider" id="cpu-slider" min="1" max="4" value="1"/>
+		<p id="cpu-cores">500GB</p>
+		<p id="cpu-price">Cost: $15</p>
+	</div>
+	<div class="option">
+		<p>RAM:</p>
 		<input type="range" class="flat-slider" id="ram-slider" min="1" max="16" value="8"/>
 		<p id="ram-amount">8GB</p>
 		<p id="ram-price">Cost: $80</p>
 	</div>
+	<div class="priceslider"></div>
+	<div class="enterprisepricing">Check out our enterprise pricing</div>
 <?php
 }
 add_shortcode('crd_price_slider','crd_price_slider_page');
