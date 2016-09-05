@@ -1,0 +1,43 @@
+default:
+- 'newer:less'
+- 'newer:csscomb'
+- 'newer:concat_css'
+- 'newer:concat'
+- 'newer:uglify'
+- 'newer:imagemin'
+- 'newer:watch'
+
+dev:
+- 'newer:less'
+- 'newer:csscomb'
+- 'newer:concat_css'
+#- 'newer:lintspaces'
+- 'newer:makepot'
+- 'newer:concat'
+- 'newer:uglify'
+- 'concurrent:target'
+- 'newer:watch'
+
+lang:
+- 'newer:makepot'
+
+minify:
+- 'newer:less'
+- 'newer:csscomb'
+- 'newer:concat_css'
+- 'newer:concat'
+- 'newer:uglify'
+- 'newer:imagemin'
+
+update:
+- 'newer:less'
+- 'newer:csscomb'
+- 'newer:concat_css'
+- 'newer:concat'
+- 'newer:uglify'
+- 'newer:imagemin'
+- 'newer:makepot'
+- 'devUpdate'
+
+push:
+- 'ftp-deploy'
