@@ -69,8 +69,9 @@ add_action('wp_enqueue_scripts','crd_slider_styles');
 function crd_price_slider_page() {
 ?>
 	<div class="option">
-		<a class="NLbtn pricingbtn active">Nederland</a>
-		<a class="DEbtn pricingbtn">Duitsland</a>
+		<label class="option_label"><?php _e('What is your prefered location for the server?','ps_translate') ?></label>
+		<a class="NLbtn pricingbtn active"><?php _e('The Netherlands','ps_translate') ?></a>
+		<a class="DEbtn pricingbtn"><?php _e('Germany','ps_translate') ?></a>
 	</div>
 	<div class="option">
 		<p>CPU Cores:</p>
@@ -83,6 +84,11 @@ function crd_price_slider_page() {
 		<input type="range" class="flat-slider" id="ram-slider" min="1" max="16" value="8"/>
 		<p id="ram-amount">8GB</p>
 		<p id="ram-price">Cost: $80</p>
+	</div>
+	<div class="option">
+		<label class="option_label"><?php _e('Do you prefer whitelabeling?','ps_translate') ?></label>
+		<a class="Yesbtn pricingbtn active"><?php _e('Yes','ps_translate') ?></a>
+		<a class="Nobtn pricingbtn"><?php _e('No','ps_translate') ?></a>
 	</div>
 	<div class="priceslider"></div>
 	<div class="enterprisepricing">Check out our enterprise pricing</div>
