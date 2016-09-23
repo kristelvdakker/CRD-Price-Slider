@@ -19,16 +19,16 @@ Text Domain:
 
 /* Define Variables */
 global $reporter;
-if( ! defined( 'CRD_PS_VER' ))
-	define( 'CRD_PS_VER', '1.2.0' );
-if( ! defined( 'CRD_PS_BASE' ))
-	define( 'CRD_PS_BASE' , dirname(__FILE__) );
-if( ! defined( 'CRD_PS_DIRECTORY' ))
-	define( 'CRD_PS_DIRECTORY' , get_option('siteurl') . '/wp-content/plugins/crd-price-slider' );
-if( ! defined( 'CRD_PS_INC' ))
-	define( 'CRD_PS_INC' , CRD_PS_DIRECTORY . '/includes' );
-if( ! defined( 'CRD_PS_BASE_INC' ))
-	define( 'CRD_PS_BASE_INC', CRD_PS_BASE . '/includes' );
+if( ! defined('CRD_PS_VER'))
+	define('CRD_PS_VER', '1.2.0');
+if( ! defined('CRD_PS_BASE'))
+	define('CRD_PS_BASE', dirname(__FILE__) );
+if( ! defined('CRD_PS_DIRECTORY'))
+	define('CRD_PS_DIRECTORY', get_option('siteurl') . '/wp-content/plugins/crd-price-slider');
+if( ! defined('CRD_PS_INC'))
+	define('CRD_PS_INC', CRD_PS_DIRECTORY . '/includes');
+if( ! defined('CRD_PS_BASE_INC'))
+	define('CRD_PS_BASE_INC', CRD_PS_BASE . '/includes');
 
 /**
  * Load Scripts
@@ -39,11 +39,11 @@ function crd_slider_scripts() {
 	wp_deregister_script('jquery-ui-core');
 
 	// Register the library again from Google's CDN
-	wp_register_script('jquery','http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js',array(),null,false);
-	wp_register_script('jquery','https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js',array(),null,false);
+	wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', array(), null, false);
+	wp_register_script('jquery-ui-core', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js', array(), null, false);
 
 	// Register the script like this for a plugin:
-	wp_register_script('slider-script',plugins_url('/assets/js/scripts.js',__FILE__),array('jquery'),false,false);
+	wp_register_script('slider-script', plugins_url('/assets/js/scripts.js',__FILE__), array('jquery'), false, false);
 
 	// For either a plugin or a theme, you can then enqueue the script:
 	wp_enqueue_script('jquery');
@@ -57,8 +57,8 @@ add_action('wp_enqueue_scripts','crd_slider_scripts');
  */
 function crd_slider_styles() {
 	// Register the style like this for a plugin:
-	wp_register_style('slider-style',plugins_url('/assets/css/styles.css',__FILE__ ),array(),'20120208','all');
-	wp_register_style('font-oswald','https://fonts.googleapis.com/css?family=Oswald:400,700',array(),'20120208','all');
+	wp_register_style('slider-style', plugins_url('/assets/css/styles.css', __FILE__ ), array(), '20120208', 'all');
+	wp_register_style('font-oswald', 'https://fonts.googleapis.com/css?family=Oswald:400,700', array(), '20120208', 'all');
 
 	// For either a plugin or a theme, you can then enqueue the style:
 	wp_enqueue_style('slider-style');
