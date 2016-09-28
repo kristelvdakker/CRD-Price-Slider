@@ -12,6 +12,8 @@ module.exports = {
         updateDomains: ['ps_translate']     // List of text domains to replace.
     },
     target: {
-        files: {}
+        files: {
+            src: ['*.php']
+        }
     }
 };

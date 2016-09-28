@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CRD Price Slider 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/crd-price-slider\n"
+"POT-Creation-Date: 2016-09-28 13:54:07+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-09-28 14:18+0000\n"
+"Last-Translator: kristelvdakker <kristelvdakker@gmail.com>\n"
+"Language-Team: Dutch\n"
+"X-Generator: Loco - https://localise.biz/\n"
+"Language: nl-NL\n"
+"Plural-Forms: nplurals=2; plural=n != 1"
+
+#: crd-price-slider.php:93
+msgid "The Netherlands"
+msgstr "Nederland"
+
+#: crd-price-slider.php:94
+msgid "Germany"
+msgstr "Duitsland"
+
+#: crd-price-slider.php:96
+msgid "What is your prefered location for the server?"
+msgstr "Wat is de gewenste locatie van de server?"
+
+#: crd-price-slider.php:124
+msgid "Do you prefer whitelabeling?"
+msgstr ""
+
+#: crd-price-slider.php:127
+msgid "Yes"
+msgstr "Ja"
+
+#: crd-price-slider.php:130
+msgid "No"
+msgstr "Nee"
+
+#. Plugin Name of the plugin/theme
+msgid "CRD Price Slider"
+msgstr "CRD Prijs Slider"
+
+#. Description of the plugin/theme
+msgid "An easy price slider"
+msgstr "Een gemakkelijke prijs slider"
+
+#. Author of the plugin/theme
+msgid "Kristel van den Akker"
+msgstr "Kristel van den Akker"
