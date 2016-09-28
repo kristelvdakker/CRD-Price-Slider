@@ -12,12 +12,12 @@ module.exports = {
     },
     all: {
         src: [
-            'css/min/grid.min.css',
-            'css/min/styles.min.css',
-            'css/min/layout.min.css',
-            'css/min/shortcodes.min.css',
-            'css/min/temp.min.css'
+            'assets/css/min/grid.min.css',
+            'assets/css/min/styles.min.css',
+            'assets/css/min/layout.min.css',
+            'assets/css/min/shortcodes.min.css',
+            'assets/css/min/temp.min.css'
         ],
-        dest: 'dist/css/styles.min.css'
+        dest: 'build/css/styles.min.css'
     }
 };

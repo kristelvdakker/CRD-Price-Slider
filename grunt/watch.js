@@ -8,10 +8,10 @@
  */
 module.exports = {
     scripts: {
-        files: ['js/*.js', 'css/less/*.less'],
+        files: ['assets/js/*.js', 'assets/css/less/*.less'],
         tasks: ['less', 'csscomb', 'concat_css'],
         options: {
-            spawn: false,
+            spawn: false
         }
     }
 };

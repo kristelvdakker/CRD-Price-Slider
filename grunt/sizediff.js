@@ -9,7 +9,7 @@
 module.exports = {
     dist: {
         src: [
-            'js/build/functions.js'
+            'build/js/functions.js'
         ]
     }
 };

@@ -39,5 +39,5 @@ update:
 - 'newer:makepot'
 - 'devUpdate'
 
-push:
-- 'ftp-deploy'
+#push:
+#- 'ftp-deploy'

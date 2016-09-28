@@ -11,11 +11,11 @@ module.exports = {
         stripBanners: true
     },
     dist: {
-        src: ['js/avia-compat.js', 'js/avia.js'],
-        dest: 'js/build/functions.js',
+        src: ['assets/js/scripts.js', 'assets/js/functions.js'],
+        dest: 'build/js/functions.js'
     },
     vendor: {
-        src: ['js/vendor/**.js'],
-        dest: 'js/build/vendor.js'
+        src: ['assets/js/vendor/**.js'],
+        dest: 'build/js/vendor.js'
     }
 };

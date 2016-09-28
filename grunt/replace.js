@@ -21,7 +21,7 @@ module.exports = {
             {
                 expand: true,
                 flatten: true,
-                src: ['package.json', 'functions.php'],
+                src: ['package.json', 'functions.php']
             }
         ]
     }

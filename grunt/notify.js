@@ -13,4 +13,4 @@ module.exports = {
             message: '<%= pkg.name %> build finished successfully.' //required
         }
     }
-}
+};

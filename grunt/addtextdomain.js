@@ -8,8 +8,8 @@
  */
 module.exports = {
     options: {
-        textdomain: 'avia_framework',    // Project text domain.
-        updateDomains: []                // List of text domains to replace.
+        textdomain: 'crd_framework',        // Project text domain.
+        updateDomains: ['ps_translate']     // List of text domains to replace.
     },
     target: {
         files: {}

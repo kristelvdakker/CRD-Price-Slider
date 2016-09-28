@@ -14,13 +14,13 @@ module.exports = {
             optimization: 2
         },
         files: {
-            'css/comb/styles.css': "css/less/styles.less",
-            'css/comb/shortcodes.css': "css/less/shortcodes.less",
-            'css/comb/grid.css': "css/less/grid.less",
-            'css/comb/layout.css': "css/less/layout.less",
-            'css/comb/print.css': "css/less/print.less",
-            'css/comb/rtl.css': "css/less/rtl.less",
-            'css/comb/temp.css': "css/less/temp.less"
+            'assets/css/comb/styles.css': "assets/css/less/styles.less",
+            'assets/css/comb/shortcodes.css': "assets/css/less/shortcodes.less",
+            'assets/css/comb/grid.css': "assets/css/less/grid.less",
+            'assets/css/comb/layout.css': "assets/css/less/layout.less",
+            'assets/css/comb/print.css': "assets/css/less/print.less",
+            'assets/css/comb/rtl.css': "assets/css/less/rtl.less",
+            'assets/css/comb/temp.css': "assets/css/less/temp.less"
         }
     }
 };
