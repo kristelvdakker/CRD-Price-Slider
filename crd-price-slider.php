@@ -86,23 +86,26 @@ add_action('init', 'crd_load_textdomain');
 
 function crd_price_slider_page() {
 ?>
-    <form name="myForm">
+    <form name="myForm" id="form_product_builder">
         <div class="option">
-            <label class="option_label">
-                <?php _e('What is your prefered location for the server?','crd_framework') ?>
-            </label>
-            <a class="NLbtn pricingbtn active">
-                <?php _e('The Netherlands','crd_framework') ?>
-            </a>
-            <a class="DEbtn pricingbtn">
-                <?php _e('Germany','crd_framework') ?>
-            </a>
-            <input type="radio" name="rdo" id="yes" checked />
-            <input type="radio" name="rdo" id="no" />
-            <div class="switch">
-                <label for="yes">yes</label>
-                <label for="no">no</label>
-            </div>
+            <?php
+                $country = array(
+                    'NL' => __('The Netherlands', 'crd_framework'),
+                    'DE' => __('Germany', 'crd_framework')
+                );
+                $html = '<label class="option_label">' . __('What is your prefered location for the server?', 'crd_framework') . '</label>';
+                $html .= '<p class="has_error error_country"></p>';
+                $html .= '<div class="btn_container">';
+                foreach ($country as $code => $name) {
+                    $label = str_replace(' ', '-', strtolower($unit));
+                    $html .= '<span class="btn_option ' . $code . '-wrap">';
+                    $html .= '<input type="radio" id="' . $code . '" name="country" value="' . $name . '">';
+                    $html .= '<label for="' . $code . '">' . $name . '</label>';
+                    $html .= '</span>';
+                }
+                $html .= '</div>';
+                echo $html;
+            ?>
         </div>
         <div class="option">
             <p>CPU Cores:</p>
