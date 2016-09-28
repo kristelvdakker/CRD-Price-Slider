@@ -10,12 +10,8 @@ module.exports = {
     options: {
         stripBanners: true
     },
-    dist: {
-        src: ['assets/js/scripts.js', 'assets/js/functions.js'],
-        dest: 'build/js/functions.js'
-    },
-    vendor: {
-        src: ['assets/js/vendor/**.js'],
-        dest: 'build/js/vendor.js'
+    dev: {
+        src: ['assets/js/scripts.js'],
+        dest: 'assets/js/concat/scripts.js'
     }
 };

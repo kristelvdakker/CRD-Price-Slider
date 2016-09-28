@@ -11,13 +11,7 @@ module.exports = {
         // Task-specific options go here.
     },
     all: {
-        src: [
-            'assets/css/min/grid.min.css',
-            'assets/css/min/styles.min.css',
-            'assets/css/min/layout.min.css',
-            'assets/css/min/shortcodes.min.css',
-            'assets/css/min/temp.min.css'
-        ],
+        src: ['assets/css/min/styles.min.css'],
         dest: 'build/css/styles.min.css'
     }
 };

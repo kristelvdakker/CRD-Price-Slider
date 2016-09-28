@@ -9,7 +9,7 @@
 module.exports = {
     scripts: {
         files: ['assets/js/*.js', 'assets/css/less/*.less'],
-        tasks: ['less', 'csscomb', 'concat_css'],
+        tasks: ['less', 'csscomb', 'concat_css', 'uglify'],
         options: {
             spawn: false
         }

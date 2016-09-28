@@ -9,8 +9,7 @@
 module.exports = {
     dist: {
         files: {
-            'build/js/functions.min.js': ['assets/js/functions.js'],
-            'build/js/vendor.min.js': ['assets/js/build/vendor.js']
+            'build/js/scripts.min.js': ['assets/js/scripts.js']
         }
     }
 };
