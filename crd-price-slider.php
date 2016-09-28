@@ -17,7 +17,11 @@ License: GPL v3
 Text Domain: crd_framework
 */
 
-/* Define Variables */
+/**
+ * Define Variables
+ *
+ * @since 1.0.0
+ */
 global $reporter;
 if( ! defined('CRD_PS_VER'))
     define('CRD_PS_VER', '1.2.0');
@@ -32,6 +36,8 @@ if( ! defined('CRD_PS_BASE_INC'))
 
 /**
  * Load Scripts
+ *
+ * @since 1.0.0
  */
 function crd_slider_scripts() {
     // Deregister the included library
@@ -43,7 +49,7 @@ function crd_slider_scripts() {
     wp_register_script('jquery-ui-core', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js', array(), null, false);
 
     // Register the script like this for a plugin:
-    wp_register_script('slider-script', plugins_url('/assets/js/scripts.js',__FILE__), array('jquery'), false, false);
+    wp_register_script('slider-script', plugins_url('/build/js/scripts.min.js',__FILE__), array('jquery'), false, false);
 
     // For either a plugin or a theme, you can then enqueue the script:
     wp_enqueue_script('jquery');
@@ -54,10 +60,12 @@ add_action('wp_enqueue_scripts','crd_slider_scripts');
 
 /**
  * Load Styles
+ *
+ * @since 1.0.0
  */
 function crd_slider_styles() {
     // Register the style like this for a plugin:
-    wp_register_style('slider-style', plugins_url('/assets/css/styles.css', __FILE__ ), array(), '20120208', 'all');
+    wp_register_style('slider-style', plugins_url('/build/css/styles.min.css', __FILE__ ), array(), '20120208', 'all');
     wp_register_style('font-oswald', 'https://fonts.googleapis.com/css?family=Oswald:400,700', array(), '20120208', 'all');
 
     // For either a plugin or a theme, you can then enqueue the style:
@@ -65,6 +73,16 @@ function crd_slider_styles() {
     wp_enqueue_style('font-oswald');
 }
 add_action('wp_enqueue_scripts','crd_slider_styles');
+
+/**
+ * Load plugin textdomain.
+ *
+ * @since 1.0.0
+ */
+function crd_load_textdomain() {
+  load_plugin_textdomain('crd_framework', false, dirname(plugin_basename(__FILE__)) . '/lang');
+}
+add_action('init', 'crd_load_textdomain');
 
 function crd_price_slider_page() {
 ?>
