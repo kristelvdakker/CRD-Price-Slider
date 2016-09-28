@@ -61,13 +61,13 @@ jQuery(document).ready(function ($) {
 		cpuamount = $(this).val();
 		if (cpuamount === '1') {
 			$('#cpu-cores').html(dataOptions[0]);
-			$('#cpu-price').html('Cost: $' + cpuamount * 15);
+			$('#cpu-price').html('Cost: $' + parseInt(cpuamount, 10) * 15);
 		} else if (cpuamount === '2') {
 			$('#cpu-cores').html(dataOptions[1]);
-			$('#cpu-price').html('Cost: $' + cpuamount * 15);
+			$('#cpu-price').html('Cost: $' + parseInt(cpuamount, 10) * 15);
 		} else if (cpuamount === '3') {
 			$('#cpu-cores').html(dataOptions[2]);
-			$('#cpu-price').html('Cost: $' + cpuamount * 15);
+			$('#cpu-price').html('Cost: $' + parseInt(cpuamount, 10) * 15);
 		} else if (cpuamount > 3 || cpuamount === null || typeof cpuamount === 'undefined') {
 			$('#cpu-cores').html('Wij nemen contact met u op');
 			$('#cpu-price').html('');
