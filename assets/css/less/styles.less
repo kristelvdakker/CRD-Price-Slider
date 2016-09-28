@@ -8,9 +8,13 @@ h1, h2, h3, h4, b {
 }
 .option {
     margin-bottom: 30px;
+    * {
+        display: inline-block;
+    }
 }
-.option * {
-    display: inline-block;
+.option_label {
+    padding: 10px 0;
+    width: 100%;
 }
 .flat-slider {
     background: linear-gradient(to right, rgba(255, 255, 255, .25) 0%, rgba(255, 255, 255, .25) 100%);
@@ -18,32 +22,34 @@ h1, h2, h3, h4, b {
     background-repeat: no-repeat;
     background-size: 350px 10px;
     height: 20px;
-    outline: none;
     overflow: hidden;
     position: relative;
     top: 5px;
     width: 360px;
 
     -webkit-appearance: none;
-}
-.flat-slider::-webkit-slider-thumb {
-    background: orange;
-    height: 20px;
-    position: relative;
-    width: 20px;
-    z-index: 3;
+    &:focus {
+        outline: none;
+    }
+    &::-webkit-slider-thumb {
+        background: orange;
+        height: 20px;
+        position: relative;
+        width: 20px;
+        z-index: 3;
 
-    -webkit-appearance: none;
-}
-.flat-slider::-webkit-slider-thumb:after {
-    background: orange;
-    content: ' ';
-    height: 10px;
-    position: absolute;
-    right: 20px;
-    top: 5px;
-    width: 360px;
-    z-index: 1;
+        -webkit-appearance: none;
+        &:after {
+            background: orange;
+            content: ' ';
+            height: 10px;
+            position: absolute;
+            right: 20px;
+            top: 5px;
+            width: 360px;
+            z-index: 1;
+        }
+    }
 }
 .content {
     left: 25%;
@@ -63,114 +69,11 @@ h1, h2, h3, h4, b {
     padding: 15px 45px;
     text-decoration: none;
     text-transform: uppercase;
+    &:first-of-type {
+        margin-left: 0;
+    }
+    &.active {
+        background: orange;
+        color: #fff;
+    }
 }
-.pricingbtn:first-of-type {
-    margin-left: 0;
-}
-.pricingbtn.active {
-    background: orange;
-    color: #fff;
-}
-.option_label {
-    padding: 10px 0;
-    width: 100%;
-}
-
-
-//.switch {
-//    -moz-transition: all .2s ease;
-//    -ms-transition: all .2s ease;
-//    -o-transition: all .2s ease;
-//    -webkit-border-radius: 25px;
-//    -webkit-transition: all .2s ease;
-//    background: #4cd964;
-//    border-radius: 25px;
-//    height: 50px;
-//    left: 50%;
-//    margin: -30px 0 0 -75px;
-//    position: absolute;
-//    text-align: center;
-//    top: 50%;
-//    transition: all .2s ease;
-//    width: 150px;
-//}
-//.switch span {
-//    -moz-transform: rotate(-45deg);
-//    -moz-transition: all .2s ease;
-//    -ms-transform: rotate(-45deg);
-//    -ms-transition: all .2s ease;
-//    -o-transform: rotate(-45deg);
-//    -o-transition: all .2s ease;
-//    -webkit-border-radius: 2px;
-//    -webkit-transform: rotate(-45deg);
-//    -webkit-transition: all .2s ease;
-//    background: #fff;
-//    border-radius: 2px;
-//    display: block;
-//    height: 4px;
-//    left: 50%;
-//    margin: -2px 0 0 -4px;
-//    position: absolute;
-//    top: 50%;
-//    transform: rotate(-45deg);
-//    transition: all .2s ease;
-//    width: 20px;
-//}
-//.switch span:after {
-//    -moz-transition: all .2s ease;
-//    -ms-transition: all .2s ease;
-//    -o-transition: all .2s ease;
-//    -webkit-border-radius: 2px;
-//    -webkit-transition: all .2s ease;
-//    background: #fff;
-//    border-radius: 2px;
-//    content: '';
-//    display: block;
-//    height: 12px;
-//    margin-top: -8px;
-//    position: absolute;
-//    transition: all .2s ease;
-//    width: 4px;
-//}
-//input[type=radio] {
-//    display: none;
-//}
-//.switch label {
-//    -moz-transition: all .2s ease;
-//    -ms-transition: all .2s ease;
-//    -o-transition: all .2s ease;
-//    -webkit-transition: all .2s ease;
-//    color: rgba(0,0,0,.2);
-//    cursor: pointer;
-//    line-height: 50px;
-//    transition: all .2s ease;
-//    width: 60px;
-//}
-//label[for=yes] {
-//    height: 20px;
-//    left: 0;
-//    position: absolute;
-//}
-//label[for=no] {
-//    position: absolute;
-//    right: 0;
-//}
-//#no:checked ~ .switch {
-//    background: #ff3b30;
-//}
-//#no:checked ~ .switch span {
-//    background: #fff;
-//    margin-left: -8px;
-//}
-//#no:checked ~ .switch span:after {
-//    background: #fff;
-//    height: 20px;
-//    margin-left: 8px;
-//    margin-top: -8px;
-//}
-//#yes:checked ~ .switch label[for=yes] {
-//    color: #fff;
-//}
-//#no:checked ~ .switch label[for=no] {
-//    color: #fff;
-//}
