@@ -8,13 +8,10 @@ h1, h2, h3, h4, b {
 }
 .option {
     margin-bottom: 30px;
-    * {
-        display: inline-block;
+    .option_label {
+        display: block;
+        width: 100%;
     }
-}
-.option_label {
-    padding: 10px 0;
-    width: 100%;
 }
 .flat-slider {
     background: rgb(228, 228, 228);
@@ -31,7 +28,8 @@ h1, h2, h3, h4, b {
         outline: none;
     }
     &::-webkit-slider-thumb {
-        background: orange;
+        background: rgb(74, 151, 194);
+        border-radius: 3px;
         height: 20px;
         position: relative;
         width: 20px;
@@ -39,7 +37,7 @@ h1, h2, h3, h4, b {
 
         -webkit-appearance: none;
         &:after {
-            background: orange;
+            background: rgb(74, 151, 194);
             content: ' ';
             height: 10px;
             position: absolute;
@@ -83,6 +81,7 @@ h1, h2, h3, h4, b {
         display: none;
     }
     .btn_container {
+        display: inline-block;
         width: 100%;
         span.btn_option {
             box-sizing: border-box;
@@ -101,6 +100,7 @@ h1, h2, h3, h4, b {
                 border-radius: 3px;
                 color: #fff;
                 cursor: pointer;
+                display: inline-block;
                 font-size: 14px;
                 padding: 12px 0;
                 text-align: center;

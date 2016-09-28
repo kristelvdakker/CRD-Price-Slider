@@ -80,79 +80,72 @@ add_action('wp_enqueue_scripts','crd_slider_styles');
  * @since 1.0.0
  */
 function crd_load_textdomain() {
-  load_plugin_textdomain('crd_framework', false, dirname(plugin_basename(__FILE__)) . '/lang');
+    load_plugin_textdomain('crd_framework', false, dirname(plugin_basename(__FILE__)) . '/languages');
 }
 add_action('init', 'crd_load_textdomain');
 
+/**
+ * Form button
+ *
+ * @param array $a The array that sets the information
+ * @param string $n The name of the button pattern
+ *
+ * @since 1.0.0
+ */
+function crd_form_buttons($a, $n) {
+    $html = '<div class="option">';
+    $html.= '<label class="option_label">' . __('What is your prefered location for the server?', 'crd_framework') . '</label>';
+    $html.= '<p class="has_error error_country"></p>';
+    $html.= '<div class="btn_container">';
+    foreach ($a as $k => $v) {
+        $label = str_replace(' ', '-', strtolower($unit));
+        $html.= '<span class="btn_option ' . $k . '-wrap">';
+        $html.= '<input type="radio" id="' . $k . '" name="' . $n . '" value="' . $v . '">';
+        $html.= '<label for="' . $k . '">' . $v . '</label>';
+        $html.= '</span>';
+    }
+    $html.= '</div>';
+    $html.= '</div>';
+    echo $html;
+}
+
 function crd_price_slider_page() {
 ?>
-    <form name="myForm" id="form_product_builder">
+    <form name="product_form" id="form_product_builder">
+        <?php
+        $country = array(
+            'NL' => __('The Netherlands', 'crd_framework'),
+            'DE' => __('Germany', 'crd_framework')
+        );
+
+        crd_form_buttons($country, 'country');
+        ?>
         <div class="option">
             <?php
-                $country = array(
-                    'NL' => __('The Netherlands', 'crd_framework'),
-                    'DE' => __('Germany', 'crd_framework')
-                );
-                $html = '<label class="option_label">' . __('What is your prefered location for the server?', 'crd_framework') . '</label>';
-                $html .= '<p class="has_error error_country"></p>';
-                $html .= '<div class="btn_container">';
-                foreach ($country as $code => $name) {
-                    $label = str_replace(' ', '-', strtolower($unit));
-                    $html .= '<span class="btn_option ' . $code . '-wrap">';
-                    $html .= '<input type="radio" id="' . $code . '" name="country" value="' . $name . '">';
-                    $html .= '<label for="' . $code . '">' . $name . '</label>';
-                    $html .= '</span>';
-                }
-                $html .= '</div>';
+                $html = '<label class="option_label">' . __('CPU Cores', 'crd_framework') . ':</label>';
                 echo $html;
             ?>
-        </div>
-        <div class="option">
-            <p>CPU Cores:</p>
             <input type="range" class="flat-slider" id="cpu-slider" min="1" max="4" value="1" />
-            <p id="cpu-cores">500GB</p>
+            <span id="cpu-cores">500GB</span>
             <p id="cpu-price">Cost: $15</p>
         </div>
         <div class="option">
-            <p>RAM:</p>
+            <?php
+                $html = '<label class="option_label">' . __('RAM', 'crd_framework') . ':</label>';
+                echo $html;
+            ?>
             <input type="range" class="flat-slider" id="ram-slider" min="1" max="16" value="8" />
-            <p id="ram-amount">8GB</p>
+            <span id="ram-amount">8GB</span>
             <p id="ram-price">Cost: $80</p>
         </div>
-        <div class="option">
-            <label class="option_label">
-                <?php _e('Do you prefer whitelabeling?','crd_framework') ?>
-            </label>
-            <a class="Yesbtn pricingbtn active">
-                <?php _e('Yes','crd_framework') ?>
-            </a>
-            <a class="Nobtn pricingbtn">
-                <?php _e('No','crd_framework') ?>
-            </a>
-        </div>
-        <div class="priceslider"></div>
-        <div class="enterprisepricing">Check out our enterprise pricing</div>
-
-        <input type="radio" name="myRadios" value="3">3%
-        <input type="radio" name="myRadios" value="5">5%
-        <input type="radio" name="myRadios" value="7">7%
+        <?php
+            $answers = array(
+                'Yes' => __('Yes', 'crd_framework'),
+                'No' => __('No', 'crd_framework')
+            );
+            crd_form_buttons($answers, 'labeling');
+        ?>
     </form>
-    Amount: <span id="amount"></span>
-
-    <script>
-        var amountField = document.getElementById('amount');
-        var rad = document.myForm.myRadios;
-        var prev = null;
-        for (var i = 0; i < rad.length; i++) {
-            rad[i].onclick = function () {
-                console.log(this.value);
-                if (this !== prev) {
-                    prev = this;
-                    amountField.textContent = 1000 + 1000 * this.value / 100;
-                }
-            };
-        }
-    </script>
     <?php
 }
 add_shortcode('crd_price_slider','crd_price_slider_page');
