@@ -28,19 +28,6 @@ jQuery(document).ready(function ($) {
             }
         });
 
-    function setPrice(pricepermonth) {
-        var calcprice,
-            value = $s.slider("value");
-
-        calcprice = (value * pricepermonth);
-        if (value > 10) {
-            $('.pricingtable').hide();
-            $(".enterprisepricing").show();
-        } else {
-            $('.pricingtable').html("$" + calcprice + "/mo");
-        }
-    }
-
     $("#cpu-slider").on("change mousemove", function (cpuamount) {
         cpuamount = $(this).val();
         if (cpuamount === '1') {

@@ -85,7 +85,7 @@ function crd_load_textdomain() {
 add_action('init', 'crd_load_textdomain');
 
 /**
- * Form button
+ * Form button element
  *
  * @param array $a The array that sets the information
  * @param string $n The name of the button pattern
@@ -109,44 +109,47 @@ function crd_form_buttons($a, $n) {
     echo $html;
 }
 
+/**
+ * Form slider element
+ *
+ * @param array $a The array that sets the information
+ * @param string $n The name of the slider pattern
+ * @param string $v The default value of the slider
+ *
+ * @since 1.0.0
+ */
+function crd_form_slider($a, $n, $va) {
+    $id = str_replace(' ', '-', strtolower($n));
+    $html = '<div class="option">';
+    $html.= '<label class="option_label">' . __($n, 'crd_framework') . ':</label>';
+    $html.= '<span id="' . $id . '-product" class="product-name">' . $a[$va - 1] . '</span>';
+    $html.= '<input type="range" class="flat-slider" id="' . $id . '-slider" min="1" max="' . count($a) . '" value="' . $va . '" />';
+    $html.= '</div>'; //option
+    echo $html;
+}
+
 function crd_price_slider_page() {
-?>
-    <form name="product_form" id="form_product_builder">
-        <?php
+    echo '<form name="product_form" id="form_product_builder">';
+
         $country = array(
             'NL' => __('The Netherlands', 'crd_framework'),
             'DE' => __('Germany', 'crd_framework')
         );
-
         crd_form_buttons($country, 'country');
-        ?>
-        <div class="option">
-            <?php
-                $html = '<label class="option_label">' . __('CPU Cores', 'crd_framework') . ':</label>';
-                echo $html;
-            ?>
-            <input type="range" class="flat-slider" id="cpu-slider" min="1" max="4" value="1" />
-            <span id="cpu-cores">500GB</span>
-            <p id="cpu-price">Cost: $15</p>
-        </div>
-        <div class="option">
-            <?php
-                $html = '<label class="option_label">' . __('RAM', 'crd_framework') . ':</label>';
-                echo $html;
-            ?>
-            <input type="range" class="flat-slider" id="ram-slider" min="1" max="16" value="8" />
-            <span id="ram-amount">8GB</span>
-            <p id="ram-price">Cost: $80</p>
-        </div>
-        <?php
-            $answers = array(
-                'Yes' => __('Yes', 'crd_framework'),
-                'No' => __('No', 'crd_framework')
-            );
-            crd_form_buttons($answers, 'labeling');
-        ?>
-    </form>
-    <?php
+
+        $dataOptions = ['500GB', '1TB', '2TB', __('We will contact you', 'crd_framework')];
+        crd_form_slider($dataOptions, 'CPU Cores', '2');
+
+        $memoryOptions = ['1GB', '2GB', '4GB', '8GB', '16GB', '32GB'];
+        crd_form_slider($memoryOptions, 'RAM', '3');
+
+        $answers = array(
+            'Yes' => __('Yes', 'crd_framework'),
+            'No'  => __('No', 'crd_framework')
+        );
+        crd_form_buttons($answers, 'labeling');
+
+    echo '</form>';
 }
 add_shortcode('crd_price_slider','crd_price_slider_page');
 
