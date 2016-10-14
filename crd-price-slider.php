@@ -149,6 +149,8 @@ function crd_price_slider_page() {
         );
         crd_form_buttons($answers, 'labeling');
 
+    echo '<div id="total_amount"></div>';
+
     echo '</form>';
 }
 add_shortcode('crd_price_slider','crd_price_slider_page');
