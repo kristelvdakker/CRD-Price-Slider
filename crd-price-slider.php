@@ -119,7 +119,7 @@ function crd_form_buttons($a, $n) {
  * @since 1.0.0
  */
 function crd_form_slider($a, $n, $va) {
-    $id=str_replace(' ', '-', strtolower($n));
+    $id = str_replace(' ', '-', strtolower($n));
     $html = '<div class="option">';
     $html.= '<label class="option_label">' . __($n, 'crd_framework') . ':</label>';
     $html.= '<span id="' . $id . '-product" class="product-name">' . $a[$va - 1] . '</span>';
